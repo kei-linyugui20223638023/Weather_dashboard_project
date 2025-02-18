@@ -172,8 +172,8 @@ def create_wind_rose(wind_speeds: list, wind_directions: list) -> str:
         raise ValueError("No wind data available to plot.")
     
     fig, ax = plt.subplots(figsize=(7, 7), subplot_kw={'polar': True})
-    ax.set_theta_zero_location('N')  # Set the zero location to North
-    ax.set_theta_direction(-1)  # Set the direction of increasing theta to clockwise
+    ax.set_theta_offset(np.pi / 2)  # Set the zero location to North
+    ax.set_thetaminuszero(True)  # Set the direction of increasing theta to clockwise
     
     # Calculate the frequency of wind directions
     bins = np.arange(0, 360, 22.5)
