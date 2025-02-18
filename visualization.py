@@ -172,15 +172,23 @@ def create_wind_rose(wind_speeds: list, wind_directions: list) -> str:
         raise ValueError("No wind data available to plot.")
     
     fig, ax = plt.subplots(figsize=(7, 7), subplot_kw={'polar': True})
-    ax.set_theta_offset(np.pi / 2)  # Set the zero location to North
-    ax.set_thetaminuszero(True)  # Set the direction of increasing theta to clockwise
+    # Set the zero location to North
+    # Set the direction of increasing theta to clockwise
     
     # Calculate the frequency of wind directions
     bins = np.arange(0, 360, 22.5)
     hist, bin_edges = np.histogram(wind_directions, bins=bins)
+
+    bin_centers = (bin_edges[:-1] + bin_edges[1:]) / 2
+    theta = np.deg2rad(bin_centers) - np.pi / 2
+    # Set the zero location to North
+    # Set the direction of increasing theta to clockwise
     
     # Plot the wind rose
-    ax.bar(np.deg2rad(bin_edges[:-1]), hist, width=np.deg2rad(22.5), color='blue', alpha=0.7)
+    ax.bar(theta, hist, width=np.deg2rad(22.5), color='blue', alpha=0.7)
+    
+    ax.set_xticks(np.deg2rad(np.arange(0, 360, 45)))
+    ax.set_xticklabels(['E', 'NE', 'N', 'NW', 'W', 'SW', 'S', 'SE'])
     
     # Convert the image to base64 encoding
     buf = io.BytesIO()
