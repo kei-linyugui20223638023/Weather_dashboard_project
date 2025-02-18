@@ -1,0 +1,14 @@
+# pydoc.yml
+source:
+  include:
+    - autolocation_process.py
+    - get_icon.py
+    - getdata.py
+    - main_app.py
+    - make_API_runnable.py
+    - processingdata.py
+    - restful_api.py
+    - visualization.py
+output:
+  format: markdown
+  destination: docs
