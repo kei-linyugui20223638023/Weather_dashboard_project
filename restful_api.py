@@ -130,7 +130,7 @@ def create_api(city_name: str) -> Flask:
             'data': request.json.get('data', "")
         }
         weatherdatas.append(weatherdata)
-        return jsonify({'weatherdata': weatherdata}), 201
+        return jsonify({'weatherdata': weatherdata}, status=201)
 
     @app.route('/weatherdashboard/api/v1.0/weatherdatas/<int:weatherdata_id>', methods=['PUT'])
     def update_weatherdata(weatherdata_id: int) -> Callable:
