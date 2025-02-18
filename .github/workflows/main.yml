@@ -36,7 +36,11 @@ jobs:
 
       - name: Generate documentation with pydoc
         run: |
-          pydoc -w .  # 使用 pydoc 生成 HTML 文档
+          for module in *.py; do  # 遍历当前目录下的所有 Python 文件
+            if [[ "$module" != "requirements.txt" && "$module" != "pydoc.yml" && "$module" != "mypy.ini" ]]; then  # 排除非模块文件
+              pydoc -w "${module%.py}"  # 生成 HTML 文档，去掉 .py 后缀
+            fi
+          done
           ls -la  # 列出当前目录内容，检查是否生成了 HTML 文件
 
       - name: Move generated HTML files to docs directory
