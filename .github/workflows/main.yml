@@ -37,7 +37,7 @@ jobs:
 
       - name: Generate documentation with pydoc-markdown
         run: |
-          pydoc-markdown -o ./docs/index.html  # 生成文档并输出到 docs/index.html
+          pydoc-markdown pydoc.yml  # 确保有 pydoc.yml 配置文件
 
       - name: Ensure docs directory is not empty
         run: |
