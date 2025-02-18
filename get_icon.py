@@ -1,3 +1,4 @@
+import httpx
 from typing import Literal
 from httpx import get
 from PIL import Image
