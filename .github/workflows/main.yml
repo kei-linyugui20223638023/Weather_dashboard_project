@@ -28,6 +28,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt  # 安装运行时依赖
           pip install mypy pydoc-markdown  # 安装开发工具依赖
+
       - name: Create docs directory
         run: mkdir -p docs  # 创建 docs 目录
 
@@ -35,19 +36,22 @@ jobs:
         run: |
           mypy --install-types --non-interactive .
           mypy --ignore-missing-imports .  # 检查项目根目录下的所有文件
+
       - name: Generate documentation with pydoc-markdown
         run: |
-          pydoc-markdown pydoc.yml  # 确保有 pydoc.yml 配置文件
+          pydoc-markdown pydoc.yml -o docs/index.html  # 确保有 pydoc.yml 配置文件
+
       - name: Ensure docs directory is not empty
         run: |
           if [ ! "$(ls -A ./docs)" ]; then
             echo "Docs directory is empty, creating a placeholder file."
             touch ./docs/index.html
           fi
+
       - name: Deploy documentation to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs  # 指定文档生成的目录
           force_orphan: true  # 强制创建 gh-pages 分支
-          commit_message: "Auto-deploy documentation" 
+          commit_message: "Auto-deploy documentation"
