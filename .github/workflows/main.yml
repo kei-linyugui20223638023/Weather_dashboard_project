@@ -37,6 +37,13 @@ jobs:
 
       - name: Generate documentation with pydoc
         run: |
+          # 创建虚拟环境
+          python -m venv pydoc-env
+          source pydoc-env/bin/activate
+          pip install -r requirements.txt  # 在虚拟环境中重新安装依赖
+          pip list  # 确认依赖已正确安装
+
+          # 遍历模块并生成文档
           for module in *.py; do
             if [[ "$module" != "requirements.txt" && "$module" != "pydoc.yml" && "$module" != "mypy.ini" ]]; then
               # 尝试导入模块，检查是否有依赖问题
