@@ -1,14 +1,32 @@
-# pydoc.yml
-source:
-  include:
-    - autolocation_process.py
-    - get_icon.py
-    - getdata.py
-    - main_app.py
-    - make_API_runnable.py
-    - processingdata.py
-    - restful_api.py
-    - visualization.py
+renderer:
+  type: html
+  theme: material
+
+loaders:
+  - type: filesystem
+    path: .
+    extensions:
+      - py
+
+processors:
+  - type: filter
+    skip_empty_modules: true
+  - type: smart_resolver
+  - type: crossref
+
+plugins:
+  - type: search
+
+sources:
+  - autolocation_process.py
+  - get_icon.py
+  - getdata.py
+  - main_app.py
+  - make_API_runnable.py
+  - processingdata.py
+  - restful_api.py
+  - visualization.py
+
 output:
-  format: markdown
+  format: html
   destination: docs
