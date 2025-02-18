@@ -1,4 +1,4 @@
-from fasthtml.common import *
+from python-fasthtml.common import *
 import httpx
 from httpx import get
 from fastapi import FastAPI, HTTPException, Query
