@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Feb 17 11:04:17 2025
-
-@author: keiii
-"""
-
 from getdata import get_weather_now, get_weather_today, get_weather_five_days
 from processingdata import processing_data_now, processing_data_today, processing_data_five_days
 from restful_api import create_api
