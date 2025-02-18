@@ -10,9 +10,11 @@ import httpx
 from fastapi import FastAPI, HTTPException, Query
 import matplotlib.pyplot as plt
 import base64
+import io
 from io import BytesIO
 import numpy as np
 from datetime import datetime, timedelta
+from PIL import Image
 
 from get_icon import get_weather_icon
 
