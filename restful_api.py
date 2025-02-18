@@ -9,7 +9,7 @@ from getdata import get_weather_now, get_weather_today, get_weather_five_days
 from processingdata import processing_data_now, processing_data_today, processing_data_five_days
 
 from flask import Flask, jsonify, abort, request, url_for
-
+from typing import Callable, Dict, List, Tuple
 
 def create_api(city_name: str) -> Flask:
     """
@@ -92,7 +92,7 @@ def create_api(city_name: str) -> Flask:
     ]
 
     @app.route('/weatherdashboard/api/v1.0/weatherdatas/<int:weatherdata_id>', methods=['GET'])
-    def get_weatherdata(weatherdata_id: int) -> jsonify:
+    def get_weatherdata(weatherdata_id: int) -> Callable:
         """
         Retrieves specific weather data based on the given ID.
 
@@ -108,7 +108,7 @@ def create_api(city_name: str) -> Flask:
         return jsonify({'weatherdata': weatherdata[0]})
 
     @app.route('/weatherdashboard/api/v1.0/weatherdatas', methods=['POST'])
-    def create_weatherdata() -> jsonify:
+    def create_weatherdata() -> Callable:
         """
         Creates a new weather data record.
 
@@ -118,7 +118,7 @@ def create_api(city_name: str) -> Flask:
         if not request.json or not 'title' in request.json:
             abort(400)
         weatherdata = {
-            'id': weatherdatas[-1]['id'] + 1,
+            'id': int(weatherdatas[-1]['id']) + 1,
             'title': request.json['title'],
             'data': request.json.get('data', "")
         }
@@ -126,7 +126,7 @@ def create_api(city_name: str) -> Flask:
         return jsonify({'weatherdata': weatherdata}), 201
 
     @app.route('/weatherdashboard/api/v1.0/weatherdatas/<int:weatherdata_id>', methods=['PUT'])
-    def update_weatherdata(weatherdata_id: int) -> jsonify:
+    def update_weatherdata(weatherdata_id: int) -> Callable:
         """
         Updates a weather data record for a specific ID.
 
@@ -150,7 +150,7 @@ def create_api(city_name: str) -> Flask:
         return jsonify({'weatherdata': weatherdata[0]})
 
     @app.route('/weatherdashboard/api/v1.0/weatherdatas/<int:weatherdata_id>', methods=['DELETE'])
-    def delete_weatherdata(weatherdata_id: int) -> jsonify:
+    def delete_weatherdata(weatherdata_id: int) -> Callable:
         """
         Deletes a weather data record for a specific ID.
 
@@ -185,7 +185,7 @@ def create_api(city_name: str) -> Flask:
         return new_weatherdata
 
     @app.route('/weatherdashboard/api/v1.0/weatherdatas', methods=['GET'])
-    def get_weatherdatas() -> jsonify:
+    def get_weatherdatas() -> Callable:
         """
         Retrieves all weather data records.
 
