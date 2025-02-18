@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Feb 10 18:03:22 2025
-
-@author: keiii
-"""
-
 from fasthtml.common import Strong, fast_app, serve, Titled, Div, P, Img, H1, H2, H3, A, Form, Label, Input, Button, Script, Ul, Li  
 import httpx
 from fastapi import FastAPI, HTTPException, Query
