@@ -31,7 +31,7 @@ jobs:
 
       - name: Generate documentation with pydoc-markdown
         run: |
-          pydoc-markdown -I . -o docs
+          pydoc-markdown --input . --output docs
 
       - name: Deploy documentation to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
