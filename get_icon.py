@@ -11,7 +11,7 @@ from PIL import Image
 from io import BytesIO
 from PIL import Image
 
-def get_weather_icon(icon_code: Literal["01d", "01n", "02d", "02n", "03d", "03n", "04d", "04n", "09d", "09n", "10d", "10n", "11d", "11n", "13d", "13n", "50d", "50n"]) -> Image:
+def get_weather_icon(icon_code: Literal["01d", "01n", "02d", "02n", "03d", "03n", "04d", "04n", "09d", "09n", "10d", "10n", "11d", "11n", "13d", "13n", "50d", "50n"]) -> Image.Image:
     """
     Download and return a weather icon image based on the provided OpenWeatherMap icon code.
 
