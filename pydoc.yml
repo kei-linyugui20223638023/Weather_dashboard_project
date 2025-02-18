@@ -18,14 +18,15 @@ plugins:
   - type: search
 
 sources:
-  - autolocation_process.py
-  - get_icon.py
-  - getdata.py
-  - main_app.py
-  - make_API_runnable.py
-  - processingdata.py
-  - restful_api.py
-  - visualization.py
+  - modules:
+      - autolocation_process
+      - get_icon
+      - getdata
+      - main_app
+      - make_API_runnable
+      - processingdata
+      - restful_api
+      - visualization
 
 output:
   format: html
