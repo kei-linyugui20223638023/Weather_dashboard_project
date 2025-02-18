@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Feb 10 13:51:47 2025
-
-@author: keiii
-"""
-
 from fasthtml.common import *
 import httpx
 from fastapi import FastAPI, HTTPException, Query
