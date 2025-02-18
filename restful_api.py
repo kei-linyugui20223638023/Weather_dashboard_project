@@ -109,7 +109,7 @@ def create_api(city_name: str) -> Flask:
         return jsonify({'weatherdata': weatherdata[0]})
 
     @app.route('/weatherdashboard/api/v1.0/weatherdatas', methods=['POST'])
-    def create_weatherdata() -> Response::
+    def create_weatherdata() -> Response :
         """
         Creates a new weather data record.
 
