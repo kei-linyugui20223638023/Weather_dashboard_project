@@ -9,6 +9,7 @@ from getdata import get_weather_now, get_weather_today, get_weather_five_days
 from processingdata import processing_data_now, processing_data_today, processing_data_five_days
 
 from flask import Flask, jsonify, abort, request, url_for
+from flask import Response
 from typing import Callable, Dict, List, Tuple
 
 def create_api(city_name: str) -> Flask:
@@ -108,7 +109,7 @@ def create_api(city_name: str) -> Flask:
         return jsonify({'weatherdata': weatherdata[0]})
 
     @app.route('/weatherdashboard/api/v1.0/weatherdatas', methods=['POST'])
-    def create_weatherdata() -> Callable:
+    def create_weatherdata() -> Response::
         """
         Creates a new weather data record.
 
@@ -117,8 +118,14 @@ def create_api(city_name: str) -> Flask:
         """
         if not request.json or not 'title' in request.json:
             abort(400)
+       
+        last_id = weatherdatas[-1]['id']
+        
+        if not isinstance(last_id, int):
+            abort(500, description="Invalid type for 'id' in weatherdatas.")
+        
         weatherdata = {
-            'id': int(weatherdatas[-1]['id']) + 1,
+            'id': last_id + 1,
             'title': request.json['title'],
             'data': request.json.get('data', "")
         }
