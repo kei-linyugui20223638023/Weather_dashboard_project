@@ -9,6 +9,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # 显式授予写入权限
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
