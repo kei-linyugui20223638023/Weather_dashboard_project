@@ -1,6 +1,6 @@
 numpy
 fastapi
-fasthtml
+python-fasthtml
 httpx
 matplotlib>=3.7.2
 numpy>=1.24.0
