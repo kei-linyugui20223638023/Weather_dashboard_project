@@ -44,19 +44,17 @@ jobs:
           pip install -r requirements.txt  # 在虚拟环境中重新安装依赖
           pip list  # 确认依赖已正确安装
 
-          # 确保当前工作目录正确
-          pwd
-          ls -la
+          # 跳过已知有问题的模块
+          skip_modules=("get_icon.py")  # 添加其他需要跳过的模块
 
           # 遍历模块并生成文档
           for module in *.py; do
             if [[ "$module" != "requirements.txt" && "$module" != "pydoc.yml" && "$module" != "mypy.ini" ]]; then
-              # 尝试导入模块，检查是否有依赖问题
-              if python -c "import ${module%.py}" &> /dev/null; then
-                pydoc -w "${module%.py}"  # 如果导入成功，生成文档
-              else
-                echo "Skipping $module due to import issues."
+              if [[ " ${skip_modules[@]} " =~ " ${module} " ]]; then
+                echo "Skipping $module due to known issues."
+                continue
               fi
+              pydoc -w "${module%.py}" || echo "Failed to generate docs for $module"
             fi
           done
           ls -la  # 列出当前目录内容，检查是否生成了 HTML 文件
