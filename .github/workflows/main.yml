@@ -31,7 +31,7 @@ jobs:
 
       - name: Install PyYAML
         run: |
-          pip install --only-binary :all: pyyaml==6.0
+          pip install --only-binary :all: pyyaml
 
       - name: Install remaining dependencies
         run: |
