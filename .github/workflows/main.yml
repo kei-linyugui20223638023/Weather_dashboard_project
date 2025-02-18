@@ -24,6 +24,9 @@ jobs:
           pip install -r requirements.txt  # 安装运行时依赖
           pip install mypy pydoc-markdown  # 安装开发工具依赖
 
+      - name: Create docs directory
+        run: mkdir -p docs  # 创建 docs 目录
+
       - name: Run static analysis with mypy
         run: |
           mypy --install-types --non-interactive .
@@ -31,7 +34,7 @@ jobs:
 
       - name: Generate documentation with pydoc-markdown
         run: |
-          pydoc-markdown --input . --output docs
+          pydoc-markdown --config-file pydoc.yml  # 确保有 pydoc.yml 配置文件
 
       - name: Deploy documentation to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
