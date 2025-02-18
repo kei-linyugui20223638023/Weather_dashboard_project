@@ -25,6 +25,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt  # 安装运行时依赖
           pip install mypy  # 安装开发工具依赖
+          pip list  # 打印已安装的依赖，确认 httpx 是否已安装
 
       - name: Create docs directory
         run: mkdir -p docs  # 创建 docs 目录
@@ -36,9 +37,14 @@ jobs:
 
       - name: Generate documentation with pydoc
         run: |
-          for module in *.py; do  # 遍历当前目录下的所有 Python 文件
-            if [[ "$module" != "requirements.txt" && "$module" != "pydoc.yml" && "$module" != "mypy.ini" ]]; then  # 排除非模块文件
-              pydoc -w "${module%.py}"  # 生成 HTML 文档，去掉 .py 后缀
+          for module in *.py; do
+            if [[ "$module" != "requirements.txt" && "$module" != "pydoc.yml" && "$module" != "mypy.ini" ]]; then
+              # 尝试导入模块，检查是否有依赖问题
+              if python -c "import ${module%.py}" &> /dev/null; then
+                pydoc -w "${module%.py}"  # 如果导入成功，生成文档
+              else
+                echo "Skipping $module due to import issues."
+              fi
             fi
           done
           ls -la  # 列出当前目录内容，检查是否生成了 HTML 文件
