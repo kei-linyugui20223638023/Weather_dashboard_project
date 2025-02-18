@@ -16,13 +16,12 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.12'  # 根据你的项目需求选择合适的 Python 版本
+          python-version: '3.12'
 
       - name: Clean build environment
         run: |
           pip install --upgrade pip setuptools wheel
-          pip uninstall -y setuptools
-          pip install --upgrade setuptools
+          pip cache purge  # 清理 pip 缓存
 
       - name: Install build tools
         run: |
@@ -31,28 +30,28 @@ jobs:
 
       - name: Install PyYAML
         run: |
-          pip install --only-binary :all: pyyaml
+          pip install --only-binary :all: pyyaml==6.0.1
 
       - name: Install remaining dependencies
         run: |
-          pip install -r requirements.txt  # 安装运行时依赖
-          pip install mypy pydoc-markdown==4.0.0  # 安装开发工具依赖
+          pip install -r requirements.txt
+          pip install mypy pydoc-markdown==4.0.0
 
       - name: Create docs directory
-        run: mkdir -p docs  # 创建 docs 目录
+        run: mkdir -p docs
 
       - name: Run static analysis with mypy
         run: |
           mypy --install-types --non-interactive .
-          mypy --ignore-missing-imports .  # 检查项目根目录下的所有文件
+          mypy --ignore-missing-imports .
 
       - name: Generate documentation with pydoc-markdown
         run: |
-          pydoc-markdown --config-file pydoc.yml  # 确保有 pydoc.yml 配置文件
+          pydoc-markdown --config-file pydoc.yml
 
       - name: Deploy documentation to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs  # 指定文档生成的目录
+          publish_dir: ./docs
           commit_message: "Auto-deploy documentation"
