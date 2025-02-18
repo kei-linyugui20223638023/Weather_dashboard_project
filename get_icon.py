@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Feb 12 14:45:57 2025
-
-@author: keiii
-"""
-
 from typing import Literal
 from httpx import get
 from PIL import Image
