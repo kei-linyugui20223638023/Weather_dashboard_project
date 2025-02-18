@@ -26,6 +26,7 @@ jobs:
 
       - name: Run static analysis with mypy
         run: |
+          mypy --install-types --non-interactive
           mypy --ignore-missing-imports .  # 检查项目根目录下的所有文件
 
       - name: Generate documentation with pydoc-markdown
