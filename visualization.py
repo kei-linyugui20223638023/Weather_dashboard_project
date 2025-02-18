@@ -289,13 +289,19 @@ def create_precipitation_chances_pie_charts(precipitation_chances: list, dates: 
         ax = plt.subplot(1, len(dates), i + 1)
         
         # Draw the pie chart
-        wedges, texts, autotexts  = ax.pie(
-            [chance, 100 - chance],
-            colors=['#66ccff', 'white'],
-            startangle=90,
-            radius=0.5,
-            wedgeprops=dict(edgecolor='darkblue', linewidth=2)
-        )
+    result = ax.pie(
+        [chance, 100 - chance],
+        colors=['#66ccff', 'white'],
+        startangle=90,
+        radius=0.5,
+        wedgeprops=dict(edgecolor='darkblue', linewidth=2)
+    )
+
+    if len(result) == 2:
+        wedges, texts = result
+        autotexts = None  # we don't need autotexts，so set it None
+    elif len(result) == 3:
+        wedges, texts, autotexts = result
         
         # Remove axis labels
         ax.set_yticklabels([])
