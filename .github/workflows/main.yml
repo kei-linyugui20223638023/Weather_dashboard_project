@@ -27,7 +27,7 @@ jobs:
       - name: Install build tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y build-essential cython
+          sudo apt-get install -y build-essential cython3
 
       - name: Install PyYAML
         run: |
