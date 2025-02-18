@@ -41,6 +41,10 @@ jobs:
         run: |
           pydoc-markdown pydoc.yml   # 确保有 pydoc.yml 配置文件
 
+      - name: Check generated documentation files
+        run: |
+          ls -la ./docs  # 列出 docs 目录的内容
+
       - name: Ensure docs directory is not empty
         run: |
           if [ ! "$(ls -A ./docs)" ]; then
