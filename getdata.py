@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Feb 10 13:43:35 2025
-
-@author: keiii
-"""
-
 from fasthtml.common import *
 import httpx
 from httpx import get
