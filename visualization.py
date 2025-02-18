@@ -289,7 +289,7 @@ def create_precipitation_chances_pie_charts(precipitation_chances: list, dates: 
         ax = plt.subplot(1, len(dates), i + 1)
         
         # Draw the pie chart
-        wedges, texts, autotexts, pct_text = ax.pie(
+        wedges, texts = ax.pie(
             [chance, 100 - chance],
             colors=['#66ccff', 'white'],
             startangle=90,
