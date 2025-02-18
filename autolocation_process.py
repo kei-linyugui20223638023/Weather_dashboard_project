@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Feb 12 09:02:01 2025
-
-@author: keiii
-"""
 import requests
 
 def get_city_name_auto(coordinates: str) -> str:
