@@ -1,3 +1,4 @@
+from fasthtml.common import Strong, fast_app, serve, Titled, Div, P, Img, H1, H2, H3, A, Form, Label, Input, Button, Script, Ul, Li  
 import httpx
 from httpx import get
 from fastapi import FastAPI, HTTPException, Query
