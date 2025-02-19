@@ -95,3 +95,14 @@ weatherdashboard2.0/
 3. **Create a New Weather Data Record**: Send a POST request to `/weatherdashboard/api/v1.0/weatherdatas` with `title` and `data` fields in the request body to create a new weather data record.
 4. **Update a Weather Data Record with a Specific ID**: Send a PUT request to `/weatherdashboard/api/v1.0/weatherdatas/<int:weatherdata_id>`, and specify the fields to be updated in the request body to update the corresponding weather data record.
 5. **Delete a Weather Data Record with a Specific ID**: Send a DELETE request to `/weatherdashboard/api/v1.0/weatherdatas/<int:weatherdata_id>` to delete the specified weather data record.
+
+
+## 7. GitHub Pages Documentation
+
+The `gh-pages` branch contains HTML documentation files for each module of the project. These documents provide detailed explanations and usage instructions for all components of the Weather Dashboard application.
+
+**Please read the documentation for more information.**
+
+## If you have any questions or find any errors in the documentation, please contact the project author.
+Author: kei-linyugui20223638023
+Email: 20223638023@m.scnu.edu.cn
