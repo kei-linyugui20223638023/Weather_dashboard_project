@@ -44,7 +44,6 @@ jobs:
           pip install --upgrade pip # Ensure pip is the latest version
           pip install -r requirements.txt # Reinstall dependencies in the virtual environment
           pip list # Confirm that dependencies are installed correctly
-
           # Iterate over modules and generate documentation
           for module in *.py; do
             if [[ "$module" != "requirements.txt" && "$module" != "pydoc.yml" && "$module" != "mypy.ini" ]]; then
@@ -77,5 +76,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs # Specify the directory where the documentation is generated
-          force_orphan: true # Force the creation of the gh-pages branch
+          force_orphan: false # Do not force the creation of the gh-pages branch
+          clean: false # Do not clean existing files on the gh-pages branch
           commit_message: "Auto-deploy documentation"
