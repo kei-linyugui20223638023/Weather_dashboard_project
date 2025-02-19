@@ -26,11 +26,11 @@ The Weather Dashboard is a feature-rich web application for weather queries. It 
     - Open a command-line tool (such as Git Bash, Windows Command Prompt, or PowerShell).
     - Use the following command to clone the repository of the main branch of the project:
       ```bash
-      git clone [Project Repository URL]
+      git clone https://github.com/kei-linyugui20223638023/Weather_dashboard_project.git
       ```
     - Enter the cloned project directory:
       ```bash
-      cd weatherdashboard2.0
+      cd Weather_dashboard_project
       ```
 2. **Check Python Version**:
     - Ensure that the installed Python version is equal to or higher than 3.12.0. Enter the following command in the command line to check the Python version:
