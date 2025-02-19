@@ -1,35 +1,22 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<html><head><title>Python: module processingdata</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-</head><body bgcolor="#f0f0f8">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module processingdata</title>
+</head><body>
 
-<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
-<tr bgcolor="#7799ee">
-<td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>processingdata</strong></big></big></font></td
-><td align=right valign=bottom
-><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/leroy/Desktop/Weather_dashboard_project-main/processingdata.py">/Users/leroy/Desktop/Weather_dashboard_project-main/processingdata.py</a></font></td></tr></table>
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">processingdata</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/home/runner/work/Weather_dashboard_project/Weather_dashboard_project/processingdata.py">/home/runner/work/Weather_dashboard_project/Weather_dashboard_project/processingdata.py</a></td></tr></table>
     <p></p>
 <p>
-<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
-<tr bgcolor="#aa55cc">
-<td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
     
-<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="base64.html">base64</a><br>
-<a href="httpx.html">httpx</a><br>
-</td><td width="25%" valign=top><a href="logging.html">logging</a><br>
-<a href="numpy.html">numpy</a><br>
-</td><td width="25%" valign=top><a href="matplotlib.pyplot.html">matplotlib.pyplot</a><br>
-</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
-<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
-<tr bgcolor="#eeaa77">
-<td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
-    
-<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl><dt><a name="-processing_data_five_days"><strong>processing_data_five_days</strong></a>(data_five_days: dict) -&gt; tuple</dt><dd><tt>Processes&nbsp;the&nbsp;raw&nbsp;weather&nbsp;forecast&nbsp;data&nbsp;for&nbsp;the&nbsp;next&nbsp;five&nbsp;days&nbsp;to&nbsp;extract&nbsp;daily&nbsp;high,&nbsp;low,&nbsp;and&nbsp;average&nbsp;temperatures,<br>
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-processing_data_five_days"><strong>processing_data_five_days</strong></a>(data_five_days: dict) -&gt; tuple</dt><dd><span class="code">Processes&nbsp;the&nbsp;raw&nbsp;weather&nbsp;forecast&nbsp;data&nbsp;for&nbsp;the&nbsp;next&nbsp;five&nbsp;days&nbsp;to&nbsp;extract&nbsp;daily&nbsp;high,&nbsp;low,&nbsp;and&nbsp;average&nbsp;temperatures,<br>
 dates,&nbsp;weather&nbsp;icons,&nbsp;weather&nbsp;conditions,&nbsp;and&nbsp;precipitation&nbsp;chances.<br>
 &nbsp;<br>
 This&nbsp;function&nbsp;processes&nbsp;the&nbsp;forecast&nbsp;data&nbsp;fetched&nbsp;from&nbsp;the&nbsp;OpenWeatherMap&nbsp;API,&nbsp;which&nbsp;includes&nbsp;weather&nbsp;data&nbsp;for<br>
@@ -57,8 +44,8 @@ Usage&nbsp;Example:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'message':&nbsp;0,&nbsp;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'cnt':&nbsp;40,&nbsp;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'list':&nbsp;[...]}))&nbsp;&nbsp;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;([20.09,&nbsp;23.97,&nbsp;25.01,&nbsp;24.38,&nbsp;23],&nbsp;[17.9,&nbsp;18.28,&nbsp;19.53,&nbsp;18.14,&nbsp;17.17],&nbsp;[19.115,&nbsp;20.33875,&nbsp;21.46,&nbsp;20.54375,&nbsp;20.255],&nbsp;['2025-02-18',&nbsp;'2025-02-19',&nbsp;'2025-02-20',&nbsp;'2025-02-21',&nbsp;'2025-02-22'],&nbsp;['04d',&nbsp;'04d',&nbsp;'04d',&nbsp;'04d',&nbsp;'04d'],&nbsp;['overcast&nbsp;clouds',&nbsp;'overcast&nbsp;clouds',&nbsp;'overcast&nbsp;clouds',&nbsp;'overcast&nbsp;clouds',&nbsp;'overcast&nbsp;clouds'],&nbsp;[0,&nbsp;0,&nbsp;0,&nbsp;0,&nbsp;0])</tt></dd></dl>
- <dl><dt><a name="-processing_data_now"><strong>processing_data_now</strong></a>(data_now: dict) -&gt; tuple</dt><dd><tt>Processes&nbsp;the&nbsp;raw&nbsp;current&nbsp;weather&nbsp;data&nbsp;fetched&nbsp;from&nbsp;the&nbsp;OpenWeatherMap&nbsp;API&nbsp;for&nbsp;use&nbsp;in&nbsp;a&nbsp;weather&nbsp;dashboard.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;([20.09,&nbsp;23.97,&nbsp;25.01,&nbsp;24.38,&nbsp;23],&nbsp;[17.9,&nbsp;18.28,&nbsp;19.53,&nbsp;18.14,&nbsp;17.17],&nbsp;[19.115,&nbsp;20.33875,&nbsp;21.46,&nbsp;20.54375,&nbsp;20.255],&nbsp;['2025-02-18',&nbsp;'2025-02-19',&nbsp;'2025-02-20',&nbsp;'2025-02-21',&nbsp;'2025-02-22'],&nbsp;['04d',&nbsp;'04d',&nbsp;'04d',&nbsp;'04d',&nbsp;'04d'],&nbsp;['overcast&nbsp;clouds',&nbsp;'overcast&nbsp;clouds',&nbsp;'overcast&nbsp;clouds',&nbsp;'overcast&nbsp;clouds',&nbsp;'overcast&nbsp;clouds'],&nbsp;[0,&nbsp;0,&nbsp;0,&nbsp;0,&nbsp;0])</span></dd></dl>
+ <dl><dt><a name="-processing_data_now"><strong>processing_data_now</strong></a>(data_now: dict) -&gt; tuple</dt><dd><span class="code">Processes&nbsp;the&nbsp;raw&nbsp;current&nbsp;weather&nbsp;data&nbsp;fetched&nbsp;from&nbsp;the&nbsp;OpenWeatherMap&nbsp;API&nbsp;for&nbsp;use&nbsp;in&nbsp;a&nbsp;weather&nbsp;dashboard.<br>
 &nbsp;<br>
 Args:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;data_now&nbsp;(dict):&nbsp;The&nbsp;raw&nbsp;current&nbsp;weather&nbsp;data&nbsp;in&nbsp;JSON&nbsp;format.<br>
@@ -87,8 +74,8 @@ Usage&nbsp;Example:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'id':&nbsp;1809858,&nbsp;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'name':&nbsp;'Guangzhou',<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'cod':&nbsp;200})<br>
-&nbsp;&nbsp;&nbsp;&nbsp;(17.64,&nbsp;64,&nbsp;'overcast&nbsp;clouds',&nbsp;'Guangzhou',&nbsp;'04d',&nbsp;'<a href="http://openweathermap.org/img/wn/04d@2x.png">http://openweathermap.org/img/wn/04d@2x.png</a>')</tt></dd></dl>
- <dl><dt><a name="-processing_data_today"><strong>processing_data_today</strong></a>(data_today: dict) -&gt; tuple</dt><dd><tt>Processes&nbsp;the&nbsp;raw&nbsp;weather&nbsp;data&nbsp;for&nbsp;today&nbsp;to&nbsp;extract&nbsp;wind&nbsp;speeds&nbsp;and&nbsp;directions.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(17.64,&nbsp;64,&nbsp;'overcast&nbsp;clouds',&nbsp;'Guangzhou',&nbsp;'04d',&nbsp;'<a href="http://openweathermap.org/img/wn/04d@2x.png">http://openweathermap.org/img/wn/04d@2x.png</a>')</span></dd></dl>
+ <dl><dt><a name="-processing_data_today"><strong>processing_data_today</strong></a>(data_today: dict) -&gt; tuple</dt><dd><span class="code">Processes&nbsp;the&nbsp;raw&nbsp;weather&nbsp;data&nbsp;for&nbsp;today&nbsp;to&nbsp;extract&nbsp;wind&nbsp;speeds&nbsp;and&nbsp;directions.<br>
 &nbsp;<br>
 This&nbsp;function&nbsp;takes&nbsp;the&nbsp;raw&nbsp;weather&nbsp;data&nbsp;fetched&nbsp;for&nbsp;today&nbsp;and&nbsp;extracts&nbsp;the&nbsp;wind&nbsp;speeds<br>
 and&nbsp;directions&nbsp;for&nbsp;each&nbsp;three-hour&nbsp;interval&nbsp;since&nbsp;the&nbsp;start&nbsp;of&nbsp;the&nbsp;day.&nbsp;It&nbsp;is&nbsp;intended<br>
@@ -110,24 +97,6 @@ Usage&nbsp;Example:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'message':&nbsp;0,&nbsp;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'cnt':&nbsp;8,<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'list':&nbsp;[{'dt':&nbsp;1739847600,&nbsp;'main':&nbsp;{'temp':&nbsp;17.9,&nbsp;'feels_like':&nbsp;17.36,&nbsp;'temp_min':&nbsp;17.9,&nbsp;'temp_max':&nbsp;17.9,&nbsp;'pressure':&nbsp;1024,&nbsp;'sea_level':&nbsp;1024,&nbsp;'grnd_level':&nbsp;1023,&nbsp;'humidity':&nbsp;62,&nbsp;'temp_kf':&nbsp;0},&nbsp;'weather':&nbsp;[{'id':&nbsp;804,&nbsp;'main':&nbsp;'Clouds',&nbsp;'description':&nbsp;'overcast&nbsp;clouds',&nbsp;'icon':&nbsp;'04d'}],&nbsp;'clouds':&nbsp;{'all':&nbsp;100},&nbsp;'wind':&nbsp;{'speed':&nbsp;3.35,&nbsp;'deg':&nbsp;12,&nbsp;'gust':&nbsp;3.23},&nbsp;'visibility':&nbsp;10000,&nbsp;'pop':&nbsp;0,&nbsp;'sys':&nbsp;{'pod':&nbsp;'d'},&nbsp;'dt_txt':&nbsp;'2025-02-18&nbsp;03:00:00'},&nbsp;{'dt':&nbsp;1739858400,&nbsp;'main':&nbsp;{'temp':&nbsp;18.2,&nbsp;'feels_like':&nbsp;17.64,&nbsp;'temp_min':&nbsp;18.2,&nbsp;'temp_max':&nbsp;18.8,&nbsp;'pressure':&nbsp;1023,&nbsp;'sea_level':&nbsp;1023,&nbsp;'grnd_level':&nbsp;1020,&nbsp;'humidity':&nbsp;60,&nbsp;'temp_kf':&nbsp;-0.6},&nbsp;'weather':&nbsp;[{'id':&nbsp;804,&nbsp;'main':&nbsp;'Clouds',&nbsp;'description':&nbsp;'overcast&nbsp;clouds',&nbsp;'icon':&nbsp;'04d'}],&nbsp;'clouds':&nbsp;{'all':&nbsp;100},&nbsp;'wind':&nbsp;{'speed':&nbsp;3.09,&nbsp;'deg':&nbsp;10,&nbsp;'gust':&nbsp;2.88},&nbsp;'visibility':&nbsp;10000,&nbsp;'pop':&nbsp;0,&nbsp;'sys':&nbsp;{'pod':&nbsp;'d'},&nbsp;'dt_txt':&nbsp;'2025-02-18&nbsp;06:00:00'},&nbsp;{'dt':&nbsp;1739869200,&nbsp;'main':&nbsp;{'temp':&nbsp;19.33,&nbsp;'feels_like':&nbsp;18.73,&nbsp;'temp_min':&nbsp;19.33,&nbsp;'temp_max':&nbsp;20.04,&nbsp;'pressure':&nbsp;1021,&nbsp;'sea_level':&nbsp;1021,&nbsp;'grnd_level':&nbsp;1019,&nbsp;'humidity':&nbsp;54,&nbsp;'temp_kf':&nbsp;-0.71},&nbsp;'weather':&nbsp;[{'id':&nbsp;804,&nbsp;'main':&nbsp;'Clouds',&nbsp;'description':&nbsp;'overcast&nbsp;clouds',&nbsp;'icon':&nbsp;'04d'}],&nbsp;'clouds':&nbsp;{'all':&nbsp;96},&nbsp;'wind':&nbsp;{'speed':&nbsp;2.58,&nbsp;'deg':&nbsp;8,&nbsp;'gust':&nbsp;2.74},&nbsp;'visibility':&nbsp;10000,&nbsp;'pop':&nbsp;0,&nbsp;'sys':&nbsp;{'pod':&nbsp;'d'},&nbsp;'dt_txt':&nbsp;'2025-02-18&nbsp;09:00:00'},&nbsp;{'dt':&nbsp;1739880000,&nbsp;'main':&nbsp;{'temp':&nbsp;20.09,&nbsp;'feels_like':&nbsp;19.49,&nbsp;'temp_min':&nbsp;20.09,&nbsp;'temp_max':&nbsp;20.09,&nbsp;'pressure':&nbsp;1021,&nbsp;'sea_level':&nbsp;1021,&nbsp;'grnd_level':&nbsp;1020,&nbsp;'humidity':&nbsp;51,&nbsp;'temp_kf':&nbsp;0},&nbsp;'weather':&nbsp;[{'id':&nbsp;804,&nbsp;'main':&nbsp;'Clouds',&nbsp;'description':&nbsp;'overcast&nbsp;clouds',&nbsp;……}]})<br>
-&nbsp;&nbsp;&nbsp;&nbsp;([3.35,&nbsp;3.09,&nbsp;2.58,&nbsp;2.39,&nbsp;1.53,&nbsp;1.23,&nbsp;1.98,&nbsp;2.83],&nbsp;[12,&nbsp;10,&nbsp;8,&nbsp;16,&nbsp;59,&nbsp;145,&nbsp;135,&nbsp;138])</tt></dd></dl>
-</td></tr></table><p>
-<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
-<tr bgcolor="#55aa55">
-<td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
-    
-<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><strong>Button</strong> = functools.partial(&lt;function ft_hx at 0x11d215750&gt;, 'button')<br>
-<strong>Div</strong> = functools.partial(&lt;function ft_hx at 0x11d215750&gt;, 'div')<br>
-<strong>H1</strong> = functools.partial(&lt;function ft_hx at 0x11d215750&gt;, 'h1')<br>
-<strong>H2</strong> = functools.partial(&lt;function ft_hx at 0x11d215750&gt;, 'h2')<br>
-<strong>H3</strong> = functools.partial(&lt;function ft_hx at 0x11d215750&gt;, 'h3')<br>
-<strong>Img</strong> = functools.partial(&lt;function ft_hx at 0x11d215750&gt;, 'img')<br>
-<strong>Input</strong> = functools.partial(&lt;function ft_hx at 0x11d215750&gt;, 'input')<br>
-<strong>Label</strong> = functools.partial(&lt;function ft_hx at 0x11d215750&gt;, 'label')<br>
-<strong>Li</strong> = functools.partial(&lt;function ft_hx at 0x11d215750&gt;, 'li')<br>
-<strong>P</strong> = functools.partial(&lt;function ft_hx at 0x11d215750&gt;, 'p')<br>
-<strong>Strong</strong> = functools.partial(&lt;function ft_hx at 0x11d215750&gt;, 'strong')<br>
-<strong>Ul</strong> = functools.partial(&lt;function ft_hx at 0x11d215750&gt;, 'ul')</td></tr></table>
+&nbsp;&nbsp;&nbsp;&nbsp;([3.35,&nbsp;3.09,&nbsp;2.58,&nbsp;2.39,&nbsp;1.53,&nbsp;1.23,&nbsp;1.98,&nbsp;2.83],&nbsp;[12,&nbsp;10,&nbsp;8,&nbsp;16,&nbsp;59,&nbsp;145,&nbsp;135,&nbsp;138])</span></dd></dl>
+</td></tr></table>
 </body></html>
