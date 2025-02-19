@@ -1,13 +1,11 @@
-以下是修正后的 Markdown 格式内容：
-markdown复制
-# Weather Dashboard Web Application README
+# Weather Dashboard Web Application README (main branch)
 
 ## 1. Project Overview
 The Weather Dashboard is a feature-rich web application for weather queries. It aims to provide users with a convenient way to obtain weather information. Users can either manually enter the name of a city or use the auto-location function to get the real-time weather conditions, today's weather forecast, and the 5-day weather prediction for a specific city. Additionally, the application is equipped with a RESTful API interface, facilitating data interaction and secondary development for developers.
 
 ## 2. Functional Features
-1. **Real-Time Weather Query**: Based on the city name entered by the user or the location information obtained through auto-location, the application calls the OpenWeatherMap API to retrieve real-time weather data, including temperature, humidity, weather condition descriptions, and corresponding weather icons.
-2. **Today's Weather Forecast**: It fetches the weather data for different time periods of the day, extracts wind speed and direction information, and generates a wind rose diagram to visually display the wind conditions of the day.
+1. **Current Weather Query**: Based on the city name entered by the user or the location information obtained through auto-location, the application calls the OpenWeatherMap API to retrieve current weather data, including temperature, humidity, weather condition descriptions, and corresponding weather icons.
+2. **Today's Weather Information**: It fetches the weather data for different time periods of the day, extracts wind speed and direction information, and generates a wind rose diagram to visually display the wind conditions of the day.
 3. **5-Day Weather Prediction**: The application acquires the 5-day weather prediction data, calculates and presents the daily maximum temperature, minimum temperature, and average temperature. It also shows weather icons, weather condition descriptions, and precipitation probabilities, visually presenting the weather change trends through charts and tables.
 4. **Visualization**: By using various visualization methods such as temperature progress bars, humidity gauges, wind rose diagrams, temperature charts, and precipitation probability pie charts, the weather data is presented to users in an intuitive and understandable way.
 5. **RESTful API Interface**: A RESTful API is provided, which supports the retrieval of real-time weather data, today's weather data, and 5-day weather prediction data, enabling other applications to integrate and use this weather data.
@@ -16,12 +14,12 @@ The Weather Dashboard is a feature-rich web application for weather queries. It 
 ## 3. Technology Stack
 1. **Programming Language**: Python, which utilizes its rich libraries and concise syntax for development.
 2. **Web Frameworks**:
-    - FastAPI is used to build the main web application logic, handling user requests and responses.
-    - Flask is employed to set up the RESTful API interface for data interaction.
+    - `fastapi` and `fasthtml` is used to build the main web application logic, handling user requests and responses.
+    - `flask` is employed to set up the RESTful API interface for data interaction.
 3. **Data Acquisition**: The `httpx` library is used to send requests to the OpenWeatherMap API to obtain weather data.
 4. **Data Processing**: The `numpy` library is applied for data calculation and processing, such as when generating visualization charts.
 5. **Visualization**: The `matplotlib` library is utilized to create various visualization charts, like temperature progress bars and humidity gauges, to visually display weather data.
-6. **HTML Generation**: The `fasthtml.common` module is used to generate HTML pages and construct the user interface.
+6. **HTML Generation**: The `fasthtml.common` python module and `HTMLx` are used to generate HTML pages and construct the user interface.
 
 ## 4. Installation and Running
 1. **Clone the Project Repository**:
@@ -52,10 +50,10 @@ The Weather Dashboard is a feature-rich web application for weather queries. It 
     - After logging in, find and obtain your API key in the personal profile or API-related page.
 5. **Configure the API Key**:
     - Open the `getdata.py` file and find the following code sections (the line numbers may vary slightly depending on code adjustments, usually near the specified lines):
-        - Around line 55: `OPENWEATHERMAP_API_KEY = "07097eccc08cd3f9c2d6186f6847cf89"`, replace the content within the double quotes with the API key you obtained.
+        - Around line 55: `OPENWEATHERMAP_API_KEY = "your_api_key_here"`, replace the content within the double quotes with the API key you obtained.
         - Around line 117: Similarly, find the assignment of `OPENWEATHERMAP_API_KEY` and replace it.
         - Around line 180: Repeat the above replacement operation.
-    - Open the `autolocation_process.py` file and find around line 24: `api_key="07097eccc08cd3f9c2d6186f6847cf89"`, replace the content within the double quotes with your API key.
+    - Open the `autolocation_process.py` file and find around line 24: `api_key="your_api_key_here"`, replace the content within the double quotes with your API key.
 6. **Run the Main Program**:
     - In the command line in the root directory of the project, run the `main_app.py` file. Depending on your Python environment, you may use one of the following commands:
       ```bash
@@ -88,8 +86,8 @@ weatherdashboard2.0/
 │ ├── .github/
 │ │ └── workflows/
 │ │ └── main.yaml # GitHub workflow configuration file for CI/CD
-│ └── docs/ # Directory for generated project documentation (generated and deployed by the CI/CD workflow)
-复制
+
+
 
 ## 6. API Usage Instructions
 1. **Get All Weather Data**: Send a GET request to `/weatherdashboard/api/v1.0/weatherdatas` to obtain all the data including real-time weather, today's weather, and 5-day weather prediction.
@@ -97,7 +95,3 @@ weatherdashboard2.0/
 3. **Create a New Weather Data Record**: Send a POST request to `/weatherdashboard/api/v1.0/weatherdatas` with `title` and `data` fields in the request body to create a new weather data record.
 4. **Update a Weather Data Record with a Specific ID**: Send a PUT request to `/weatherdashboard/api/v1.0/weatherdatas/<int:weatherdata_id>`, and specify the fields to be updated in the request body to update the corresponding weather data record.
 5. **Delete a Weather Data Record with a Specific ID**: Send a DELETE request to `/weatherdashboard/api/v1.0/weatherdatas/<int:weatherdata_id>` to delete the specified weather data record.
-
-## 7. Contribution Guidelines
-1. **Problem Feedback**: If you encounter any problems or have any suggestions during the use of the application, please feel free to submit an Issue in the GitHub repository of the project, describing the problem or suggestion in detail.
-2. **Code Contribution**: If you want to contribute code to the project, first fork the
