@@ -61,6 +61,10 @@ jobs:
           git rm -rf .  # 删除 gh-pages 分支中的所有文件
           cd ..
 
+      - name: Force a change to ensure a commit
+        run: |
+          echo "Auto-deploy at $(date)" > ./docs/.autodeploy  # 创建一个临时文件以强制提交
+
       - name: Deploy documentation to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
