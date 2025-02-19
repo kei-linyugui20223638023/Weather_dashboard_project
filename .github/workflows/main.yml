@@ -45,9 +45,7 @@ jobs:
           pip install -r requirements.txt # 在虚拟环境中重新安装依赖
           pip list # 确认依赖已正确安装
 
-          # 遍历模块并生成文档
-          pip install matplotlib
-          
+          # 遍历模块并生成文档          
           for module in *.py; do
             if [[ "$module" != "requirements.txt" && "$module" != "pydoc.yml" && "$module" != "mypy.ini" ]]; then
               pydoc -w "${module%.py}" || echo "Failed to generate docs for $module"
