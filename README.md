@@ -72,7 +72,8 @@ The Weather Dashboard is a feature-rich web application for weather queries. It 
     - Enter the city name as prompted, and the program will output the API URLs for the real-time data, today's data, and 5-day forecast data of the corresponding city. You can access the corresponding weather data through these URLs. Note that when running the API, you need to close the running main program to avoid port conflicts.
 
 ## 5. Directory Structure
-weatherdashboard2.0/
+**weatherdashboard2.0/**
+
 │ ├── getdata.py # Functions to fetch weather data from the OpenWeatherMap API
 
 │ ├── processingdata.py # Functions to process raw weather data
@@ -92,6 +93,8 @@ weatherdashboard2.0/
 │ ├── mypy.ini # Configuration file for mypy static type checking
 
 │ ├── requirements.txt # List of project - dependent libraries
+
+│ ├── README.md # Project description and user guide 
 
 │ ├── .github/
 
