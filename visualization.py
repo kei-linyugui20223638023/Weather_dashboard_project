@@ -1,5 +1,3 @@
-from fasthtml.common import *
-import httpx
 from fastapi import FastAPI, HTTPException, Query
 import matplotlib.pyplot as plt
 import base64
