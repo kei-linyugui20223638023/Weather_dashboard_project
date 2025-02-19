@@ -74,17 +74,29 @@ The Weather Dashboard is a feature-rich web application for weather queries. It 
 ## 5. Directory Structure
 weatherdashboard2.0/
 │ ├── getdata.py # Functions to fetch weather data from the OpenWeatherMap API
+
 │ ├── processingdata.py # Functions to process raw weather data
+
 │ ├── get_icon.py # Functions to obtain weather icons
+
 │ ├── visualization.py # Functions to create visualization charts
+
 │ ├── restful_api.py # Code for building the RESTful API
+
 │ ├── make_API_runnable.py # Script to run the API and generate URLs
+
 │ ├── autolocation_process.py # Functions to obtain the city name through auto - location
+
 │ ├── main_app.py # The main program, containing the routes and logic of the web application
+
 │ ├── mypy.ini # Configuration file for mypy static type checking
+
 │ ├── requirements.txt # List of project - dependent libraries
+
 │ ├── .github/
+
 │ │ └── workflows/
+
 │ │ └── main.yaml # GitHub workflow configuration file for CI/CD
 
 
