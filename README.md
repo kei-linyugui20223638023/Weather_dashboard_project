@@ -105,4 +105,5 @@ The `gh-pages` branch contains HTML documentation files for each module of the p
 
 ## If you have any questions or find any errors in the documentation, please contact the project author.
 Author: kei-linyugui20223638023
+
 Email: 20223638023@m.scnu.edu.cn
