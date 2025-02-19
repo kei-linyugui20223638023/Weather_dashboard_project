@@ -50,10 +50,16 @@ jobs:
           ref: gh-pages
           path: gh-pages
 
-      - name: Merge gh-pages files into docs directory
+      - name: Copy existing files from gh-pages to docs directory
         run: |
           cp -r gh-pages/* ./docs/ || true  # 将 gh-pages 分支中的所有文件复制到 docs 目录
           cp -r gh-pages/.* ./docs/ || true  # 确保隐藏文件也被复制
+
+      - name: Clean gh-pages branch
+        run: |
+          cd gh-pages
+          git rm -rf .  # 删除 gh-pages 分支中的所有文件
+          cd ..
 
       - name: Deploy documentation to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
