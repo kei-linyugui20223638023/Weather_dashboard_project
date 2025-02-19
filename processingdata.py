@@ -75,6 +75,7 @@ def processing_data_today(data_today: dict) -> tuple:
     # Extracting hourly data for today
     today = datetime.utcnow()
     today_start = datetime(today.year, today.month, today.day)
+    today_hourly_data = data_today.get('list', [])
     
     # Extracting wind speed and direction data
     wind_speeds = [hour['wind']['speed'] for hour in today_hourly_data]
