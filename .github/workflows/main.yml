@@ -13,8 +13,10 @@ jobs:
       contents: write
 
     steps:
-      - name: Checkout code
+      - name: Checkout main branch code
         uses: actions/checkout@v3
+        with:
+          ref: main  # 检出 main 分支代码
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -42,21 +44,20 @@ jobs:
         run: |
           pydoc-markdown pydoc.yml
 
-      - name: Check generated documentation files
-        run: |
-          ls -la ./docs
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v3
+        with:
+          ref: gh-pages  # 检出 gh-pages 分支
+          path: gh-pages  # 将 gh-pages 分支内容检出到 gh-pages 目录
 
-      - name: Ensure docs directory is not empty
+      - name: Copy all existing files from gh-pages to docs directory
         run: |
-          if [ ! "$(ls -A ./docs)" ]; then
-            echo "Docs directory is empty, creating a placeholder file."
-            touch ./docs/index.html
-          fi
+          cp -r gh-pages/* ./docs/  # 将 gh-pages 分支中的所有文件复制到 docs 目录
+          cp -r gh-pages/.* ./docs/  # 确保隐藏文件也被复制
 
       - name: Deploy documentation to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs
-          force_orphan: true
           commit_message: "Auto-deploy documentation"
