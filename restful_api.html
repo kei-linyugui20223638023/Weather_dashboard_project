@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module restful_api</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>restful_api</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/leroy/Desktop/Weather_dashboard_project-main/restful_api.py">/Users/leroy/Desktop/Weather_dashboard_project-main/restful_api.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-create_api"><strong>create_api</strong></a>(city_name: str) -&gt; flask.app.Flask</dt><dd><tt>Creates&nbsp;a&nbsp;Flask&nbsp;application&nbsp;for&nbsp;weather&nbsp;data&nbsp;API.<br>
+&nbsp;<br>
+Args:<br>
+city_name&nbsp;(str):&nbsp;The&nbsp;name&nbsp;of&nbsp;the&nbsp;city&nbsp;to&nbsp;fetch&nbsp;weather&nbsp;data&nbsp;for.<br>
+&nbsp;<br>
+Returns:<br>
+Flask:&nbsp;A&nbsp;configured&nbsp;instance&nbsp;of&nbsp;the&nbsp;Flask&nbsp;application.<br>
+&nbsp;&nbsp;&nbsp;Example&nbsp;response:<br>
+&nbsp;&nbsp;&nbsp;&lt;Flask&nbsp;'restful_api'&gt;<br>
+&nbsp;<br>
+Usage&nbsp;Example:<br>
+&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;app&nbsp;=&nbsp;<a href="#-create_api">create_api</a>('London')<br>
+&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;app.run(debug=True,&nbsp;use_reloader=False)<br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;*&nbsp;Serving&nbsp;Flask&nbsp;app&nbsp;'restful_api'<br>
+&nbsp;&nbsp;*&nbsp;Debug&nbsp;mode:&nbsp;on<br>
+&nbsp;&nbsp;*&nbsp;Running&nbsp;on&nbsp;<a href="http://localhost:5000">http://localhost:5000</a>&nbsp;<br>
+&nbsp;&nbsp;Press&nbsp;CTRL+C&nbsp;to&nbsp;quit<br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;(and&nbsp;then&nbsp;you&nbsp;can&nbsp;check&nbsp;the&nbsp;API&nbsp;through&nbsp;visiting&nbsp;the&nbsp;website&nbsp;<a href="http://localhost:5000/weatherdashboard/api/v1.0/weatherdatas">http://localhost:5000/weatherdashboard/api/v1.0/weatherdatas</a>)</tt></dd></dl>
+ <dl><dt><a name="-generate_api_url"><strong>generate_api_url</strong></a>(city_name: str) -&gt; tuple</dt><dd><tt>Generates&nbsp;different&nbsp;endpoint&nbsp;URLs&nbsp;for&nbsp;the&nbsp;weather&nbsp;data&nbsp;API&nbsp;of&nbsp;a&nbsp;specific&nbsp;city.<br>
+&nbsp;<br>
+Args:<br>
+city_name&nbsp;(str):&nbsp;The&nbsp;name&nbsp;of&nbsp;the&nbsp;city&nbsp;to&nbsp;generate&nbsp;URLs&nbsp;for.<br>
+&nbsp;<br>
+Returns:<br>
+tuple:&nbsp;Contains&nbsp;URLs&nbsp;for&nbsp;real-time&nbsp;data,&nbsp;today's&nbsp;data,&nbsp;and&nbsp;five-day&nbsp;forecast&nbsp;data.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Example&nbsp;response:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;('<a href="http://localhost:5000/weatherdashboard/api/v1.0/weatherdatas/1">http://localhost:5000/weatherdashboard/api/v1.0/weatherdatas/1</a>',&nbsp;'<a href="http://localhost:5000/weatherdashboard/api/v1.0/weatherdatas/2">http://localhost:5000/weatherdashboard/api/v1.0/weatherdatas/2</a>',&nbsp;'<a href="http://localhost:5000/weatherdashboard/api/v1.0/weatherdatas/3">http://localhost:5000/weatherdashboard/api/v1.0/weatherdatas/3</a>')<br>
+&nbsp;<br>
+Usage&nbsp;Example:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;<a href="#-generate_api_url">generate_api_url</a>('London')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;('<a href="http://localhost:5000/weatherdashboard/api/v1.0/weatherdatas/1">http://localhost:5000/weatherdashboard/api/v1.0/weatherdatas/1</a>',&nbsp;'<a href="http://localhost:5000/weatherdashboard/api/v1.0/weatherdatas/2">http://localhost:5000/weatherdashboard/api/v1.0/weatherdatas/2</a>',&nbsp;'<a href="http://localhost:5000/weatherdashboard/api/v1.0/weatherdatas/3">http://localhost:5000/weatherdashboard/api/v1.0/weatherdatas/3</a>')</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>Callable</strong> = typing.Callable<br>
+<strong>Dict</strong> = typing.Dict<br>
+<strong>List</strong> = typing.List<br>
+<strong>Tuple</strong> = typing.Tuple<br>
+<strong>request</strong> = &lt;LocalProxy unbound&gt;</td></tr></table>
+</body></html>
