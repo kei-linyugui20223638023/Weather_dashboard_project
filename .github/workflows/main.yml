@@ -65,12 +65,13 @@ jobs:
       - name: Check generated documentation files
         run: |
           ls -la ./docs # List the contents of the docs directory
+     
       - name: Ensure docs directory is not empty
         run: |
           if [ ! "$(ls -A ./docs)" ]; then
             echo "Docs directory is empty, creating a placeholder file."
             touch ./docs/index.html
-          Fi
+          fi
 
       - name: Deploy documentation to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
