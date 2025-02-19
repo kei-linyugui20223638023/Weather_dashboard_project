@@ -79,7 +79,3 @@ jobs:
           publish_dir: ./docs # 指定文档生成的目录
           force_orphan: true # 强制创建 gh-pages 分支
           commit_message: "Auto-deploy documentation"
-          force_orphan: false
-          enable_jekyll: false
-          disable_nojekyll: false
-          exclude_assets: .github
