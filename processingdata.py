@@ -1,14 +1,4 @@
-from fasthtml.common import Strong, fast_app, serve, Titled, Div, P, Img, H1, H2, H3, A, Form, Label, Input, Button, Script, Ul, Li  
-from fastapi import FastAPI, HTTPException, Query
-import matplotlib.pyplot as plt
-import base64
-from io import BytesIO
-import numpy as np
 from datetime import datetime, timedelta
-import logging
-from urllib.parse import unquote
-
-from getdata import get_weather_now, get_weather_today, get_weather_five_days
 
 def processing_data_now(data_now: dict) -> tuple:
     """
@@ -85,19 +75,11 @@ def processing_data_today(data_today: dict) -> tuple:
     # Extracting hourly data for today
     today = datetime.utcnow()
     today_start = datetime(today.year, today.month, today.day)
-    today_hourly_data = data_today.get('list', [])
-        
-    # Checking if there is any data
-    if not today_hourly_data:
-        return Titled("Error", Div(P("No hourly data available for today.")))
     
     # Extracting wind speed and direction data
     wind_speeds = [hour['wind']['speed'] for hour in today_hourly_data]
     wind_directions = [hour['wind']['deg'] for hour in today_hourly_data]
-    
-    # Checking if wind data is valid
-    if not wind_speeds or not wind_directions:
-        return Titled("Error", Div(P("No wind data available for today.")))
+
     
     return wind_speeds, wind_directions
 
