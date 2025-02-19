@@ -21,7 +21,7 @@ def get_city_name_auto(coordinates: str) -> str:
     lat, lon = map(float, coordinates.split(","))
     
     # Use OpenWeatherMap API to get the city name
-    api_key="07097eccc08cd3f9c2d6186f6847cf89"  #Replace your API keys here
+    api_key="your_api_key_here"  #Replace your API keys here
     url = f"https://api.openweathermap.org/geo/1.0/reverse?lat={lat}&lon={lon}&limit=1&appid={api_key}"
     
     response = requests.get(url)
