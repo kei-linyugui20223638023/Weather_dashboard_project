@@ -16,7 +16,7 @@ jobs:
       - name: Checkout main branch code
         uses: actions/checkout@v3
         with:
-          ref: main  # 检出 main 分支代码
+          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -47,17 +47,24 @@ jobs:
       - name: Checkout gh-pages branch
         uses: actions/checkout@v3
         with:
-          ref: gh-pages  # 检出 gh-pages 分支
-          path: gh-pages  # 将 gh-pages 分支内容检出到 gh-pages 目录
+          ref: gh-pages
+          path: gh-pages
 
-      - name: Copy all existing files from gh-pages to docs directory
+      - name: Merge gh-pages files into docs directory
         run: |
-          cp -r gh-pages/* ./docs/  # 将 gh-pages 分支中的所有文件复制到 docs 目录
-          cp -r gh-pages/.* ./docs/  # 确保隐藏文件也被复制
+          cp -r gh-pages/* ./docs/ || true  # 将 gh-pages 分支中的所有文件复制到 docs 目录
+          cp -r gh-pages/.* ./docs/ || true  # 确保隐藏文件也被复制
 
       - name: Deploy documentation to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs
-          commit_message: "Auto-deploy documentation"
+          commit_message: Auto-deploy documentation
+          publish_branch: gh-pages
+          allow_empty_commit: true  # 允许即使没有文件变化也提交
+          keep_files: false  # 不保留 gh-pages 分支中的旧文件
+          force_orphan: false
+          enable_jekyll: false
+          disable_nojekyll: false
+          exclude_assets: .github
