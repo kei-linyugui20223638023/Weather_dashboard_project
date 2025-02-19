@@ -52,7 +52,7 @@ def get_weather_now(location: str) -> Dict:
     """
     # OpenWeatherMap API configuration
     OPENWEATHERMAP_API_URL = "http://api.openweathermap.org/data/2.5/weather"
-    OPENWEATHERMAP_API_KEY = "07097eccc08cd3f9c2d6186f6847cf89"  # Replace with your API key
+    OPENWEATHERMAP_API_KEY = "your_api_key_here"  # Replace with your API key
 
     response = get(
         OPENWEATHERMAP_API_URL,
@@ -114,7 +114,7 @@ def get_weather_today(location: str) -> Dict:
 
     # OpenWeatherMap API configuration
     OPENWEATHERMAP_API_URL = "http://api.openweathermap.org/data/2.5/forecast"
-    OPENWEATHERMAP_API_KEY = "07097eccc08cd3f9c2d6186f6847cf89"  # Replace with your API key
+    OPENWEATHERMAP_API_KEY = "your_api_key_here"  # Replace with your API key
 
     response = get(
         OPENWEATHERMAP_API_URL,
@@ -177,7 +177,7 @@ def get_weather_five_days(location: str) -> Dict:
 
     # OpenWeatherMap API configuration
     OPENWEATHERMAP_API_URL = "http://api.openweathermap.org/data/2.5/forecast"
-    OPENWEATHERMAP_API_KEY = "07097eccc08cd3f9c2d6186f6847cf89"  # Replace with your API key
+    OPENWEATHERMAP_API_KEY = "your_api_key_here"  # Replace with your API key
 
     response = get(
         OPENWEATHERMAP_API_URL,
